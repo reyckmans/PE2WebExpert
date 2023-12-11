@@ -8,11 +8,12 @@ export default {
   <div class="navbar">
     <img src="../assets/logoRobbePE.png" class="logo">
     <ul>
-      <li><a href="#">Home</a></li>
+      <li><router-link to="/">Home</router-link></li>
       <li><a href="#sAboud_us">About us</a></li>
       <li><a href="shop.html">Shop</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><router-link to="/contact">Contact</router-link></li>
       <li><a href="login.html">Login</a></li>
+      <li><router-link to="/winkelmand">Winkelmand</router-link></li>
 
     </ul>
   </div>

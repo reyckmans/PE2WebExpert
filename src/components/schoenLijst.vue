@@ -19,6 +19,7 @@ export default {
 
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@import 'src/style/_base.scss';
 
 </style>

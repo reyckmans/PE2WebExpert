@@ -1,0 +1,28 @@
+@use "base" as *;
+
+.aboud_us_input{
+  padding: 70px 200px;
+}
+
+.about_us_text{
+  ont-family: Montserrat,sans-serif;
+  font-size: 15pt;
+  color: #565656;
+}
+
+.titel_Discover{
+  text-align: center;
+  padding: 45px 0px 0px 0px;
+}
+
+.h1_text{
+  color: $blueSite;
+  font-family: Montserrat,sans-serif;
+  font-size: 40pt;
+}
+
+.fa-brands{
+  color: $background-color;
+  font-size: 25pt;
+  margin: 10px;
+}

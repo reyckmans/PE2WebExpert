@@ -9,9 +9,6 @@ export default {
 </script>
 
 <template>
-  <body>
-    <div class="banner">
-      <navbarindex/>
 
       <div class="content">
         <h1>YOUR SNEAKER, YOUR STORY</h1>
@@ -22,33 +19,21 @@ export default {
         </div>
       </div>
 
-    </div>
-  </body>
 </template>
 
 <style scoped>
 
-body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../assets/Background.jpeg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
 
 .banner {
   width: 100%;
   height: 100vh;
 }
 
-
-
-
 .content {
   width: 100%;
-  position: absolute;
+  /*position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%); */
   text-align: center;
   color: #ffffff;
 }

@@ -55,7 +55,7 @@ $fontweightbold: bold;
 }
 
 body{
-  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../assets/Background.jpeg);
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../src/assets/Background.jpeg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -115,9 +115,9 @@ body{
 
 .content{
   width: 100%;
-  /* position: absolute;
+  position: absolute;
   top: 50%;
-  transform: translateY(-50%); */
+  transform: translateY(-50%);
   text-align: center;
   color: #ffffff;
 

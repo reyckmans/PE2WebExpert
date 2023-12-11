@@ -1,0 +1,51 @@
+@use 'base' as *;
+
+/* Login page*/
+.container{
+  padding: 8% 0 0;
+  width: 365px;
+  margin: auto;
+}
+
+.form{
+  position: relative;
+  z-index: 1;
+  max-width: 350px;
+  margin: 0 auto 100px;
+  padding: 30px 45px 30px 45px;
+  background: $background-color;
+
+  h2{
+    text-align: center;
+    color: $blueSite;
+    padding: 5px;
+  }
+}
+
+.form {
+  input{
+    @include input;
+
+    ::placeholder {
+      color: $graycolor;
+    }
+  }
+
+  .btn{
+    @include btn;
+    border-radius: 25px;
+  }
+
+  .message {
+    @include message;
+    margin: 10px 0;
+    a {
+      text-decoration: none;
+      color: $blueSite;
+    }
+  }
+}
+
+.form .register-form{
+  display: none;
+}
