@@ -1,6 +1,16 @@
 <script>
+import benner from "@/components/bennerHome.vue";
+
 export default {
-  name: "login"
+  name: "login",
+  data(){
+    return{
+      products: []
+    }
+  },
+  components: {
+    benner
+  }
 }
 </script>
 

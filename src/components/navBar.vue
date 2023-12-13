@@ -1,6 +1,12 @@
 <script>
+import {useGebruikerStore} from "@/store/gebruiker";
+import {mapState} from "pinia";
+
 export default {
-  name: "navBar.vue"
+  name: "navBar.vue",
+  computed: {
+    ...mapState(useGebruikerStore, ['name']),
+  },
 }
 </script>
 
@@ -9,11 +15,12 @@ export default {
     <img src="../assets/logoRobbePE.png" class="logo">
     <ul>
       <li><router-link to="/">Home</router-link></li>
-      <li><a href="#sAboud_us">About us</a></li>
-      <li><a href="shop.html">Shop</a></li>
+      <li><router-link to="/about">About us</router-link></li>
+      <li><router-link to="/shop">Shop</router-link></li>
       <li><router-link to="/contact">Contact</router-link></li>
-      <li><a href="login.html">Login</a></li>
+      <li><router-link to="/login">Login</router-link></li>
       <li><router-link to="/winkelmand">Winkelmand</router-link></li>
+      {{name}}
 
     </ul>
   </div>

@@ -20,7 +20,6 @@ export default {
       </div>
 
 </template>
-
 <style scoped>
 
 
@@ -31,9 +30,8 @@ export default {
 
 .content {
   width: 100%;
-  /*position: absolute;
-  top: 50%;
-  transform: translateY(-50%); */
+  position: relative;
+  margin-top: 23%;
   text-align: center;
   color: #ffffff;
 }

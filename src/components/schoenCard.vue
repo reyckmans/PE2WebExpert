@@ -16,7 +16,6 @@ export default {
     <img class="card-img_shop" :src="'src/assets/' + afbeelding" :alt="naam">
     <div class="container_shop">
       <h2 class="card-header_shop">{{naam}}</h2>
-      <button class="btn-card_shop">Koop Nu</button>
       <i class="fa-regular fa-heart"></i>
       <font-awesome-icon :icon="['far', 'heart']" />
       <h3 class="price">{{ prijs }}</h3>

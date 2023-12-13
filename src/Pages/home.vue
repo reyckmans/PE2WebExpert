@@ -1,25 +1,29 @@
 <script>
 
 import benner from "@/components/bennerHome.vue";
+import about from "@/Pages/about.vue";
+import About from "@/Pages/about.vue";
 
 export default {
   name: "home",
-  data(){
-    return{
+  data() {
+    return {
       products: []
     }
   },
   components: {
+    About,
     benner
-  }
+  },
+
 }
 </script>
 
 <template>
   <benner/>
 
-
   <h1 class="titel_Discover h1_text">Discover our variety of Exclusive Products</h1>
+
   <section id="scards">
     <div class="card">
       <img class="card-img" src="src/assets/Jordan1LowTravis.jpg" alt="Jordan 1 High">
@@ -51,6 +55,8 @@ export default {
       </div>
     </div>
   </section>
+
+  <about/>
 
 </template>
 

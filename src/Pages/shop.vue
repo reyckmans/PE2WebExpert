@@ -1,11 +1,16 @@
 <script>
+
+import schoenLijst from "@/components/schoenLijst.vue";
+
 export default {
-  name: "shop"
+  name: "shop",
+  components: {schoenLijst},
 }
+
 </script>
 
 <template>
-
+  <schoen-lijst/>
 </template>
 
 <style scoped lang="scss">

@@ -7,16 +7,21 @@ export default {
   components: {schoenCard},
 
   data() {
-    return{
+    return {
       sneakers: json.schoenen
     }
+  },
+  methods: {
+    goToDetailPage(id) {
+        this.$router.push(`/detailpage/${id}`)
+    },
   }
 }
+
 </script>
 
 <template>
-  <schoenCard v-for="schoen in sneakers" :naam="schoen.naam" :afbeelding="schoen.afbeelding" :prijs="schoen.prijs"/>
-
+    <schoenCard @click="()=>goToDetailPage(schoen.id)" v-for="schoen in sneakers" :naam="schoen.naam" :afbeelding="schoen.afbeelding" :prijs="schoen.prijs"/>
 </template>
 
 <style scoped lang="scss">

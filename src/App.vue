@@ -7,7 +7,8 @@ import navBar from "@/components/navBar.vue";
 export default{
   components: {
       benner,
-      footer, navBar
+      footer,
+      navBar
   }
 }
 
@@ -21,7 +22,6 @@ export default{
 </template>
 
 <style scoped>
-
 #bennerid {
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(assets/Background.jpeg);
   background-size: cover;

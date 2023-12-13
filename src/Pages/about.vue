@@ -1,4 +1,6 @@
 <script>
+import {useGebruikerStore} from "@/store/gebruiker";
+
 export default {
   name: "about"
 }
@@ -36,7 +38,7 @@ export default {
 .about_us_text {
   ont-family: Montserrat, sans-serif;
   font-size: 15pt;
-  color: #565656;
+  color: $background-color
 }
 
 </style>
