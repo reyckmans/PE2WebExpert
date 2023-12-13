@@ -1,6 +1,7 @@
 <script>
 import json from "@/Json/Product.json";
 import {useGebruikerStore} from "@/store/gebruiker";
+import { mapActions } from 'pinia'
 
 export default {
   name: "detailpage",
@@ -17,7 +18,9 @@ export default {
   methods: {
     terugNaarShop() {
       this.$router.push('/shop');
+
     },
+    ...mapActions(useGebruikerStore, ['voegSchoenToe']),
   }
 }
 </script>
@@ -46,7 +49,7 @@ export default {
       <button>46</button>
       <button>47</button>
 
-      <button class="btn-card_shop">ADD TO CART</button>
+      <button @click="()=>voegSchoenToe(gekozenschoen.id)" class="btn-card_shop">ADD TO CART</button>
     </div>
   </section>
 

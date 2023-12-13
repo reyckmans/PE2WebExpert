@@ -6,6 +6,7 @@ import contact from '@/Pages/contact.vue'
 import login from '@/Pages/login.vue'
 import detailpage from '@/Pages/detailpage.vue'
 import winkeland from "@/Pages/winkeland.vue";
+import checkoutpage from "@/Pages/checkoutpage.vue";
 
 
 const routes = [
@@ -44,7 +45,13 @@ const routes = [
         path: "/winkelmand",
         name: "winkelmand",
         component: winkeland
-    }
+    },
+    {
+        path: "/checkoutpage",
+        name: "checkoutpage",
+        component: checkoutpage
+    },
+
     // Add more routes as needed
 ];
 

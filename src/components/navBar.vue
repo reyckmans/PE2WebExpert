@@ -5,7 +5,7 @@ import {mapState} from "pinia";
 export default {
   name: "navBar.vue",
   computed: {
-    ...mapState(useGebruikerStore, ['name']),
+    ...mapState(useGebruikerStore, ['items']),
   },
 }
 </script>
@@ -19,9 +19,7 @@ export default {
       <li><router-link to="/shop">Shop</router-link></li>
       <li><router-link to="/contact">Contact</router-link></li>
       <li><router-link to="/login">Login</router-link></li>
-      <li><router-link to="/winkelmand">Winkelmand</router-link></li>
-      {{name}}
-
+      <li><router-link to="/winkelmand">Winkelmand {{items.length}}</router-link></li>
     </ul>
   </div>
 </template>
