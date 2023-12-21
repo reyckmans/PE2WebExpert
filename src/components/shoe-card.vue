@@ -1,38 +1,79 @@
 <script>
 export default {
-  name: "schoenCard.vue",
+  name: "shoe-card.vue",
   props: {
-    id: Number,
-    naam: String,
-    afbeelding: String,
-    stock: Number,
-    prijs: Number
-  }
-}
+    shoe: {
+      id: Number,
+      naam: String,
+      afbeelding: String,
+      stock: Number,
+      prijs: Number,
+      stock: Number,
+      maten: Object,
+    },
+  },
+  computed: {
+    soldOut() {
+      return (
+        Object.values(this.shoe.maten).reduce(
+          (init, next) => init + next,
+          0
+        ) === 0
+      );
+    },
+    almostSoldOut() {
+      return (
+        Object.values(this.shoe.maten).reduce((init, next) => init + next, 0) <
+        6
+      );
+    },
+  },
+};
 </script>
 
 <template>
-  <div class="card_shop">
-    <img class="card-img_shop" :src="'src/assets/' + afbeelding" :alt="naam">
+  <div style="position: relative; width: 100%" class="card_shop">
+    <div v-if="soldOut" class="sold-out">Sold Out</div>
+
+    <img
+      class="card-img_shop"
+      :src="'src/assets/' + shoe.afbeelding"
+      :alt="shoe.naam"
+    />
     <div class="container_shop">
-      <h2 class="card-header_shop">{{naam}}</h2>
+      <h2 class="card-header_shop">{{ shoe.naam }}</h2>
       <i class="fa-regular fa-heart"></i>
       <font-awesome-icon :icon="['far', 'heart']" />
-      <h3 class="price">{{ prijs }}</h3>
+      <h3 class="price">€{{ shoe.prijs }}</h3>
     </div>
   </div>
+
+  <!-- <div class="lll"></div> -->
 </template>
 
 <style scoped lang="scss">
-@import 'src/style/_base.scss';
+@import "src/style/_base.scss";
+* .sold-out {
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
 
-.main-producten{
+  color: white;
+  background-color: grey;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  font-size: x-large;
+  z-index: 99;
+}
+
+.main-producten {
   @include flex-between();
   width: 90%;
   margin: 5rem auto;
 }
 
-.scards_shop{
+.scards_shop {
   width: 100%;
   padding: 35px 0;
   display: flex;
@@ -41,19 +82,18 @@ export default {
 }
 
 .card_shop {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  width: 25%;
-  margin: 20px;
   background-color: $background-color;
 
   &:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   }
 
-  .card-img_shop{
+  .card-img_shop {
     width: 100%;
     height: auto;
+    //opacity: 0.5;
   }
 }
 
@@ -63,7 +103,7 @@ export default {
   justify-content: left;
   flex-wrap: wrap;
 
-  .card-header_shop{
+  .card-header_shop {
     width: 100%;
     color: $blueSite;
     font-weight: 500;
@@ -71,7 +111,7 @@ export default {
     text-align: center;
   }
 
-  .btn-card_shop{
+  .btn-card_shop {
     width: 200px;
     padding: 15px 0;
     text-align: center;
@@ -84,28 +124,28 @@ export default {
     cursor: pointer;
     position: relative;
 
-    &:hover{
+    &:hover {
       background: $blueSite;
       color: $background-color;
     }
   }
 
-  .price{
+  .price {
     color: #009688;
     font-size: 15pt;
   }
 }
 
-.card-img_shop{
+.card-img_shop {
   width: 100%;
   height: auto;
 }
 
-#body_shop{
+#body_shop {
   background-color: $grijsachtergrond;
 }
 
-.fa-regular{
+.fa-regular {
   color: $blueSite;
   font-size: 25pt;
   margin: 0 auto;
@@ -113,7 +153,7 @@ export default {
 }
 
 /* section cards*/
-#scards{
+#scards {
   width: 100%;
   padding: 35px 0;
   display: flex;
@@ -121,13 +161,13 @@ export default {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 25%;
   margin: 20px;
 
   &:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -138,7 +178,7 @@ export default {
   flex-wrap: wrap;
 }
 
-.card-header{
+.card-header {
   width: 100%;
   color: $blueSite;
   font-weight: 500;
@@ -146,12 +186,12 @@ export default {
   text-align: center;
 }
 
-.card-img{
+.card-img {
   width: 100%;
   height: auto;
 }
 
-.btn-card{
+.btn-card {
   width: 200px;
   padding: 15px 0;
   text-align: center;
@@ -164,20 +204,19 @@ export default {
   cursor: pointer;
   position: relative;
 
-  &:hover{
+  &:hover {
     background: $blueSite;
     color: $background-color;
   }
 }
 
-.filter-col{
+.filter-col {
   width: 30%;
 }
 
-@media screen and (max-width: 1000px){
-  .main-producten{
+@media screen and (max-width: 1000px) {
+  .main-producten {
     flex-direction: column;
   }
 }
-
 </style>
