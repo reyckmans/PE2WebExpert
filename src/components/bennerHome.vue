@@ -1,43 +1,50 @@
 <script>
-import navbarindex from "./navBar.vue"
+import navbarindex from "./navBar.vue";
 export default {
   name: "benner.vue",
-  components:{
-    navbarindex
-  }
-}
+  components: {
+    navbarindex,
+  },
+};
 </script>
 
 <template>
-
-      <div class="content">
-        <h1>YOUR SNEAKER, YOUR STORY</h1>
-        <p>Koop je sneakers hier</p>
-        <div>
-          <a href="login.html"><button class="btn-benner" type="button"><span></span>Login</button></a>
-          <button class="btn-benner" type="button"><span></span>Shop</button>
-        </div>
-      </div>
-
+  <div class="content">
+    <h1>YOUR SNEAKER, YOUR STORY</h1>
+    <p>Koop je sneakers hier</p>
+    <div>
+      <router-link to="/login"
+        ><button class="btn-benner" type="button">
+          <span></span>Login
+        </button></router-link
+      >
+      <router-link to="/shop"
+        ><button class="btn-benner" type="button">
+          <span></span>Shop
+        </button></router-link
+      >
+    </div>
+  </div>
 </template>
 <style scoped>
-
-
 .banner {
   width: 100%;
-  height: 100vh;
+  /*   height: 100vh;
+ */
 }
 
 .content {
   width: 100%;
-  position: relative;
-  margin-top: 23%;
+  /*   position: relative;
+ */ /*   margin-top: 23%;
+ */
   text-align: center;
   color: #ffffff;
 }
 .content h1 {
   font-size: 70px;
-  margin-top: 80px;
+  /*   margin-top: 80px;
+ */
 }
 .content p {
   margin: 20px auto;
@@ -76,5 +83,4 @@ export default {
 .btn-benner:hover {
   border: none;
 }
-
 </style>

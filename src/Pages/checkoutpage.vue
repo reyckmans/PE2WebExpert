@@ -1,36 +1,17 @@
-<!-- <script>
-export default {
-  name: "checkoutpage"
-}
-</script>
-
-<template>
-
-  <div class="box">
-    <h1>CHECKOUT PAGE</h1>
-
-  </div>
-
-</template>
-
-<style scoped>
-@import 'src/style/_base.scss';
-
-.box{
-  background-color: aliceblue;
-  padding: 4% 0 4%;
-  width: 600px;
-  margin: auto;
-  text-align: center;
-
-}
-
-</style> -->
 <script>
+import { useGebruikerStore } from "@/store/gebruiker";
+import { useShoeStockRoom } from "../store/shoe-stockroom-store";
+import { mapState, mapActions } from "pinia";
+import confirmation from "../components/confirmation.vue";
+
 export default {
   name: "CheckoutPage",
+  components: {
+    confirmation,
+  },
   data() {
     return {
+      hasPaid: false,
       useDifferentBilling: false, // Checkbox status
       addressDetails: {
         firstName: "",
@@ -48,26 +29,64 @@ export default {
         houseNumber: "",
         postalCode: "",
       },
-      orderSummary: [
-        { name: "Product 1", price: 10.0, quantity: 2 },
-        { name: "Product 2", price: 15.0, quantity: 1 },
-        // Voeg hier meer producten toe als dat nodig is
-      ],
     };
   },
   computed: {
-    total() {
-      return this.orderSummary.reduce((acc, product) => acc + product.price * product.quantity, 0);
+    ...mapState(useGebruikerStore, ["aangemeldeGebruiker"]),
+    ...mapState(useGebruikerStore, ["totaal"]),
+    ...mapState(useGebruikerStore, ["totaalMetBtw"]),
+    ...mapState(useShoeStockRoom, ["shoes"]),
+
+    cartItems() {
+      if (this.aangemeldeGebruiker) {
+        return this.aangemeldeGebruiker.winkelmand.map((item) => {
+          const shoe = this.shoes.find((shoe) => shoe.id === item.schoenId);
+          if (shoe) {
+            return { ...shoe, gekozenMaat: item.maat };
+          }
+          return undefined;
+        });
+      }
+      return [];
     },
-    totalTax() {
-      // Hier kun je je eigen BTW-berekening toevoegen
-      return this.total * 0.21;
+    summary() {
+      return this.cartItems?.reduce((inital, item) => {
+        const key = `${item.id}-${item.gekozenMaat}`;
+        if (inital[key]) {
+          inital[key] = {
+            ...item,
+            amount: inital[key].amount + 1,
+            prijs: inital[key].prijs + item.prijs,
+          };
+        } else {
+          inital[key] = { ...item, amount: 1 };
+        }
+        return { ...inital };
+      }, {});
+    },
+    totaal() {
+      return Object.values(this.summary).reduce(
+        (totaal, item) => totaal + item.prijs,
+        0
+      );
+    },
+    totaalMetBtw() {
+      return this.totaal * 1.21;
     },
   },
+  mounted() {
+    this.addressDetails.firstName = this.aangemeldeGebruiker.voornaam;
+    this.addressDetails.lastName = this.aangemeldeGebruiker.achternaam;
+    this.addressDetails.country = this.aangemeldeGebruiker.land;
+    this.addressDetails.street = this.aangemeldeGebruiker.straat;
+    this.addressDetails.houseNumber = this.aangemeldeGebruiker.huisnummer;
+    this.addressDetails.postalCode = this.aangemeldeGebruiker.postcode;
+  },
   methods: {
-    goToConfirmationPage() {
-      // Simuleer een geslaagde betaling en ga naar de bevestigingspagina
-      this.$router.push("/confirmation");
+    ...mapActions(useGebruikerStore, ["maakWinkelmandVrij"]),
+    payForCart() {
+      this.maakWinkelmandVrij();
+      this.hasPaid = true;
     },
   },
 };
@@ -75,7 +94,7 @@ export default {
 
 <template>
   <div class="checkout-container">
-    <div class="left-section">
+    <div v-if="!hasPaid" class="left-section">
       <h2>Adresgegevens</h2>
       <div class="form-group">
         <label>
@@ -115,7 +134,8 @@ export default {
       </div>
       <div class="form-group">
         <label>
-          <input type="checkbox" v-model="useDifferentBilling" /> Facturatiegegevens verschillend van adresgegevens
+          <input type="checkbox" v-model="useDifferentBilling" />
+          Facturatiegegevens verschillend van adresgegevens
         </label>
       </div>
       <div v-if="useDifferentBilling" class="billing-form">
@@ -158,27 +178,35 @@ export default {
         </div>
       </div>
     </div>
-    <div class="right-section">
+    <div v-if="!hasPaid" class="right-section">
       <div class="order-summary">
         <h2>Bestellingsoverzicht</h2>
         <ul>
-          <li v-for="(product, index) in orderSummary" :key="index">
-            {{ product.name }} - €{{ (product.price * product.quantity).toFixed(2) }}
-            <span>Aantal: {{ product.quantity }}</span>
+          <li v-for="(value, key) in summary" :key="index">
+            <p>{{ `${value.naam} x ${value.amount}` }}</p>
+            <p>Maat: {{ value.gekozenMaat }}</p>
+            <img
+              width="70"
+              :src="'/src/assets/' + value.afbeelding"
+              alt="schoen"
+            />
+            <p>Prijs: €{{ value.prijs }}</p>
           </li>
         </ul>
         <div class="totals">
-          <span>Totaal: €{{ total.toFixed(2) }}</span>
-          <span>BTW (21%): €{{ totalTax.toFixed(2) }}</span>
+          <p>-----------------------</p>
+          <p>Totaal: €{{ totaal.toFixed(2) }}</p>
+          <p>BTW (21%): €{{ totaalMetBtw.toFixed(2) }}</p>
         </div>
       </div>
-      <button @click="goToConfirmationPage" class="checkout-button">Afrekenen</button>
+      <button @click="payForCart" class="checkout-button">Afrekenen</button>
     </div>
+    <confirmation v-else />
   </div>
 </template>
 
 <style scoped>
-@import 'src/style/_base.scss';
+@import "src/style/_base.scss";
 
 /* Voeg hier je aangepaste stijlen toe */
 
@@ -187,7 +215,7 @@ export default {
   background-color: #f9f9f9;
   padding: 20px;
   width: 80%;
-  margin: auto;
+  margin: 50px auto;
   text-align: center;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -233,9 +261,4 @@ h2 {
 .billing-form {
   margin-top: 10px;
 }
-
 </style>
-
-
-
-
