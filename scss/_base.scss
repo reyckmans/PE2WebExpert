@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 $background-color: #eee7e4;
 $blueSite: #009688;
 $graycolor: #c0c9ce;
 $grijsachtergrond: #f2f2f2;
 $zwart: #000000;
-$font-family: 'Roboto', sans-serif;
+$font-family: "Roboto", sans-serif;
 $fontweightbold: bold;
 
-@mixin flex-between(){
+@mixin flex-between() {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-@mixin btn($fontcolor: #FAFAFA){
-  font-family: 'Roboto', sans-serif;
+@mixin btn($fontcolor: #fafafa) {
+  font-family: "Roboto", sans-serif;
   font-size: 15px;
   outline: 0;
   border: 0;
@@ -27,14 +27,14 @@ $fontweightbold: bold;
   text-transform: uppercase;
 }
 
-@mixin message($fontcolor: #90A4AE){
+@mixin message($fontcolor: #90a4ae) {
   color: $fontcolor;
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
 }
 
-@mixin input($bkgnd: #F5F5F5){
+@mixin input($bkgnd: #f5f5f5) {
   font-family: $font-family;
   width: 100%;
   border: 0;
@@ -47,27 +47,28 @@ $fontweightbold: bold;
   background: $bkgnd;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
 }
 
-body{
-  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../src/assets/Background.jpeg);
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url(../src/assets/Background.jpeg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-.banner{
+.banner {
   width: 100%;
   height: 100vh;
 }
 
-.navbar{
+.navbar {
   width: 85%;
   margin: auto;
   padding: 35px 0;
@@ -75,14 +76,14 @@ body{
   align-items: center;
   justify-content: space-between;
 
-  ul{
-    li{
+  ul {
+    li {
       list-style: none;
       display: inline-block;
       margin: 0 20px;
       position: relative;
-      &:after{
-        content: '';
+      &:after {
+        content: "";
         height: 3px;
         width: 0%;
         background: $blueSite;
@@ -91,49 +92,46 @@ body{
         bottom: -10px;
         transition: 0.5s;
       }
-      &:hover{
-        &:after{
+      &:hover {
+        &:after {
           width: 100%;
         }
       }
     }
-    a{
+    a {
       text-decoration: none;
       color: #ffffff;
       text-transform: uppercase;
     }
-    .detailpagetext{
+    .detailpagetext {
       color: $zwart;
     }
   }
 }
 
-.logo{
+.logo {
   width: 100px;
   cursor: pointer;
 }
 
-.content{
+.content {
   width: 100%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   text-align: center;
   color: #ffffff;
 
-  h1{
+  h1 {
     font-size: 70px;
     margin-top: 80px;
   }
 
-  p{
+  p {
     margin: 20px auto;
     font-weight: 150;
     line-height: 25px;
   }
 }
 
-.btn-benner{
+.btn-benner {
   width: 200px;
   padding: 15px 0;
   text-align: center;
@@ -147,7 +145,7 @@ body{
   position: relative;
   overflow: hidden;
 
-  span{
+  span {
     background: $blueSite;
     height: 100%;
     width: 0;
@@ -159,32 +157,31 @@ body{
     transition: 0.5s;
   }
 
-  &:hover span{
+  &:hover span {
     width: 100%;
   }
 
-  &:hover{
+  &:hover {
     border: none;
   }
 }
 
-
-footer{
+footer {
   text-align: center;
   background-color: $blueSite;
 
-  a{
+  a {
     padding: 40px 40px 0px 40px;
     text-decoration: none;
     color: $background-color;
   }
 }
 
-.h2_footer{
+.h2_footer {
   padding: 10px;
   color: $background-color;
 }
 
-.p_footer{
+.p_footer {
   padding: 10px;
 }

@@ -1,29 +1,41 @@
 <script>
 import benner from "@/components/bennerHome.vue";
-import footer from "@/components/footer.vue";
-import SchoenLijst from "@/components/schoenLijst.vue";
+import Footer from "@/components/footer.vue";
 import navBar from "@/components/navBar.vue";
 
-export default{
+export default {
   components: {
-      benner,
-      footer,
-      navBar
-  }
-}
-
+    benner,
+    Footer,
+    navBar,
+  },
+};
 </script>
 
 <template>
-  <nav-bar/>
-  <router-view></router-view>
-  <footer/>
-
+  <nav-bar />
+  <router-view id="app-container"></router-view>
+  <Footer />
 </template>
 
-<style scoped>
+<style>
+body {
+  height: 100vh;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#app-container {
+  flex-grow: 1;
+}
+
 #bennerid {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(assets/Background.jpeg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url(assets/Background.jpeg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -34,6 +46,4 @@ export default{
   width: 100%;
   height: 100vh;
 }
-
-
 </style>
