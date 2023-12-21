@@ -1,19 +1,27 @@
 <script>
 export default {
-  name: "contact"
-}
+  name: "contact",
+};
 </script>
 
 <template>
-
   <div class="container_c">
-    <form action="action_page.php">
-
+    <form>
       <label for="fname">First Name</label>
-      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      <input
+        type="text"
+        id="fname"
+        name="firstname"
+        placeholder="Your name.."
+      />
 
       <label for="lname">Last Name</label>
-      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      <input
+        type="text"
+        id="lname"
+        name="lastname"
+        placeholder="Your last name.."
+      />
 
       <label for="country">Country</label>
       <select id="country" name="country">
@@ -23,20 +31,25 @@ export default {
       </select>
 
       <label for="subject">Subject</label>
-      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      <textarea
+        id="subject"
+        name="subject"
+        placeholder="Write something.."
+        style="height: 200px"
+      ></textarea>
 
-      <input type="submit" value="Submit">
-
+      <input type="submit" value="Submit" />
     </form>
   </div>
-
 </template>
 
 <style scoped lang="scss">
-@import 'src/style/_base.scss';
+@import "src/style/_base.scss";
 
 /*Contact Page*/
-input[type=text], select, textarea {
+input[type="text"],
+select,
+textarea {
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */
   border: 1px solid #ccc; /* Gray border */
@@ -44,10 +57,10 @@ input[type=text], select, textarea {
   box-sizing: border-box; /* Make sure that padding and width stays in place */
   margin-top: 6px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
 }
 
-input[type=submit] {
+input[type="submit"] {
   background-color: $blueSite;
   color: $background-color;
   padding: 12px 20px;
@@ -56,7 +69,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+input[type="submit"]:hover {
   background-color: $blueSite;
 }
 
@@ -65,9 +78,8 @@ input[type=submit]:hover {
   background-color: $background-color;
   padding: 20px;
   width: 50vw;
-  margin: 0 auto;
+  margin: 50px auto;
   display: flex;
   justify-content: center;
 }
-
 </style>
