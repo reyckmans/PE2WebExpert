@@ -1,31 +1,84 @@
 <script>
-import {useGebruikerStore} from "@/store/gebruiker";
-import {mapState} from "pinia";
+import { useGebruikerStore } from "@/store/gebruiker";
+import { mapActions, mapState } from "pinia";
 
 export default {
   name: "navBar.vue",
-  computed: {
-    ...mapState(useGebruikerStore, ['items']),
+  setup() {
+    const gebruikerStore = useGebruikerStore();
+
+    return { gebruikerStore };
   },
-}
+  computed: {
+    ...mapState(useGebruikerStore, ["items"]),
+    ...mapState(useGebruikerStore, ["aangemeldeGebruiker"]),
+  },
+  methods: {
+    logout() {
+      this.gebruikerStore.logout();
+      this.$router.push("/");
+    },
+  },
+};
 </script>
 
 <template>
   <div class="navbar">
-    <img src="../assets/logoRobbePE.png" class="logo">
+    <img src="../assets/logoRobbePE.png" class="logo" />
     <ul>
-      <li><router-link to="/">Home</router-link></li>
-      <li><router-link to="/about">About us</router-link></li>
-      <li><router-link to="/shop">Shop</router-link></li>
-      <li><router-link to="/contact">Contact</router-link></li>
-      <li><router-link to="/login">Login</router-link></li>
-      <li><router-link to="/winkelmand">Winkelmand {{items.length}}</router-link></li>
+      <li>
+        <router-link to="/">Home</router-link>
+      </li>
+      <li>
+        <router-link to="/about">About us</router-link>
+      </li>
+      <li>
+        <router-link to="/shop">Shop</router-link>
+      </li>
+      <li>
+        <router-link to="/contact">Contact</router-link>
+      </li>
+      <li v-if="aangemeldeGebruiker === null">
+        <router-link to="/login">Login</router-link>
+      </li>
+      <li v-else><a @click="logout" type="button">Logout</a></li>
+      <li v-if="aangemeldeGebruiker !== null">
+        <router-link to="/winkelmand">
+          <div class="winkelmand">
+            <p>Winkelmand</p>
+            <div
+              v-if="aangemeldeGebruiker?.winkelmand?.length !== 0"
+              class="badge"
+            >
+              {{ aangemeldeGebruiker?.winkelmand?.length }}
+            </div>
+          </div>
+        </router-link>
+      </li>
     </ul>
   </div>
 </template>
 
 <style scoped lang="scss">
-@import 'src/style/_base.scss';
+@import "src/style/_base.scss";
+
+.badge {
+  background-color: red;
+  color: white;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -13px;
+  top: -13px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.winkelmand {
+  position: relative;
+}
 
 .navbar {
   width: 85%;
@@ -43,7 +96,7 @@ export default {
       position: relative;
 
       &:after {
-        content: '';
+        content: "";
         height: 3px;
         width: 0%;
         background: $blueSite;
@@ -76,5 +129,4 @@ export default {
   width: 100px;
   cursor: pointer;
 }
-
 </style>

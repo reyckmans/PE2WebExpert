@@ -5,200 +5,380 @@
       "naam": "Jordan 1 Bred Toe",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "Jordan1BredToe.png",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$699",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 699,
+      "btw": ""
     },
     {
       "id": 2,
       "naam": "Jordan 1 Mocha",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "Jordan1Mocha.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$549",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 0,
+        "39": 0,
+        "40": 0,
+        "41": 0,
+        "42": 0,
+        "43": 0,
+        "44": 0,
+        "45": 0,
+        "46": 0
+      },
+      "prijs": 549,
+      "btw": ""
     },
     {
       "id": 3,
       "naam": "Jordan 1 Lost and Fount",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "Jordan1L&F.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$399",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 399,
+      "btw": ""
     },
     {
       "id": 4,
       "naam": "Jordan 1 Low Travis Scott Revers Mocha",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "Jordan1LowTravis.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$1299",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 1299,
+      "btw": ""
     },
     {
       "id": 5,
       "naam": "Jordan 4 colombia",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "Jordan4Colombia.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$899",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 899,
+      "btw": ""
     },
     {
       "id": 6,
       "naam": "Jordan 4 Military Black",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "Jordan4Military.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$569",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 569,
+      "btw": ""
     },
     {
       "id": 7,
       "naam": "Jordan 4 Levi's Black",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "Jordan4Levis.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$799",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 799,
+      "btw": ""
     },
     {
       "id": 8,
       "naam": "Jordan 4 SB Pine Green",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "Jordan4SB.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$499",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 499,
+      "btw": ""
     },
     {
       "id": 9,
       "naam": "Nike SB Dunk Jarritos",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "DunkJarritos.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$599",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 599,
+      "btw": ""
     },
     {
       "id": 10,
       "naam": "Nike SB Dunk Low TIGHTBOOTH",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "DunkTIGHTBOOTH.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$209",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 209,
+      "btw": ""
     },
     {
       "id": 11,
       "naam": "Nike SB Dunk Concepts Orange Lobster",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "DunkLobster.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$339",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 339,
+      "btw": ""
     },
     {
       "id": 12,
       "naam": "Nike SB Dunk Yuto Horigome",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "DunkHorigome.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$239",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 239,
+      "btw": ""
     },
     {
       "id": 13,
       "naam": "Yeezy 350 V2 Bred",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "Ybred.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$349",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 349,
+      "btw": ""
     },
     {
       "id": 14,
       "naam": "Yeezy 350 V2 Beluga",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "Ybeluga.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$299",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 299,
+      "btw": ""
     },
     {
       "id": 15,
       "naam": "Yeezy 350 V2 Zebra",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "Yzebra.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$399",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 399,
+      "btw": ""
     },
     {
       "id": 16,
       "naam": "Yeezy 350 V2 Core Black Red",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "YCoreBlackRed.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$349",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 349,
+      "btw": ""
     },
     {
       "id": 17,
       "naam": "Yeezy 700 Wave Runner",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "Ywave.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$449",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 449,
+      "btw": ""
     },
     {
       "id": 18,
       "naam": "Yeezy 700 Enflame Amber",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "YAmber.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$349",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 349,
+      "btw": ""
     },
     {
       "id": 19,
       "naam": "Yeezy 700 Magnet",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "Ymagnet.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$499",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 499,
+      "btw": ""
     },
     {
       "id": 20,
       "naam": "Yeezy 700 Carbon Blue",
       "omschrijving": "Autentieke sneaker, gloed nieuw en nooit gedragen",
       "afbeelding": "YCarbon.jpg",
-      "maten":[38,39,40,41,42,43,44,45,46],
-      "prijs": "$549",
-      "btw": "",
-      "stock": ""
+      "maten": {
+        "38": 2,
+        "39": 0,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 0,
+        "46": 3
+      },
+      "prijs": 549,
+      "btw": ""
     }
   ]
 }
